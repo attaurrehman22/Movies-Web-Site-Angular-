@@ -1,0 +1,148 @@
+.custom-button {
+    display: flex;
+    height: 40px;
+    width: 100%;
+    /* width: 100px;  */
+    align-items: center;
+    justify-content: space-between;
+    background-color: transparent; /* Use transparent for background */
+    border: 1px; /* Add border with solid style */
+    border-radius: 3%; /* Add border-radius for rounded corners */
+    color: black;
+    font-weight: bold;
+    text-align: left;
+    padding: 0 10px; /* Add padding to the left and right */
+    margin-right: 3px;
+}
+
+.arrow {
+    margin-left: 5px;
+    font-weight:900;
+    font-size: 20px;
+}
+
+
+.div-for-trending-data{
+    margin-top: 0px;
+    /* height:370px; */
+    margin-bottom: 25px;
+}
+
+.movie-Popular-container {
+    /* height: 100; */
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    /* overflow-y: hidden; 
+    overflow-x: auto; */
+    position: relative;
+    margin-left: 30px;
+  }
+  .movie-Popular-container::-webkit-scrollbar
+{
+    display: none;
+} 
+
+.movie-Popular-item {
+    display: inline-block;
+    padding: 6px;
+    height: 350px; 
+    /* width: 180px; */
+    margin-right: 10px;
+    align-items: center;
+    justify-content: center;
+    object-fit: contain;
+    box-sizing: content-box;
+    transition: transform 450ms;
+    border-radius: 25px;
+  }
+
+
+  .progress1 {
+    width: 50px;
+    height: 50px;
+
+    background: none;
+    position: absolute;
+    left: 4px;
+    top: 124px;
+  }
+
+.progress1::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    /* border: 6px solid #6f1c1c; */
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  .progress1>span {
+    width: 50%;
+    height: 50%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+  }
+  .progress1 .progress-right {
+    right: 10;
+  }
+  .progress1 .progress-value {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .yellow-border {
+    border: 6px solid yellow;
+  }
+  
+  .green-border {
+    border: 6px solid green;
+  }
+
+
+
+  .movie-Popular-image {
+    width: 160px; 
+    height: 250px;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    box-sizing: content-box;
+    transition: transform 450ms;
+  }
+  
+  .movie-Popular-details {
+    height: 50px;
+    width: 140px;
+    text-align: left;
+  }
+  
+
+  .movie-Popular-name {
+    font-weight: bold;
+    color: black;
+    height: 25px;
+    font-size: 15px;
+    margin-top: 18px;
+  }
+  
+
+  .movie-Popular-date {
+    color: black;
+    font-size: 12px;
+    margin-top: 36px;
+  }
+
+  .custom-col-50 {
+    width: 50%;
+  }
+
+
+
+
+

@@ -1,0 +1,127 @@
+<div class="container-for-all-div">
+    <div class="navdiv">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <img
+            src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_short-8e7b30f73a4020692ccca9c88bafe5dcb6f8a62a4c6bc55cd9ba82bb2cd95f6c.svg"
+            alt=""
+          />
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <div
+                  class="dropdown"
+                  (mouseenter)="showDropdown()"
+                  (mouseleave)="hideDropdown()"
+                >
+                  <button
+                    class="btn btn-secondary bg-none"
+                    type="button"
+                    [attr.aria-expanded]="isDropdownVisible ? 'true' : 'false'"
+                  >
+                    Movies
+                  </button>
+                  <ul class="dropdown-menu" [class.show]="isDropdownVisible">
+                    <li><a class="dropdown-item" href="popular">Popular</a></li>
+                    <li><a class="dropdown-item" href="#">Now Playing</a></li>
+                    <li><a class="dropdown-item" href="#">Upcoming</a></li>
+                    <li><a class="dropdown-item" href="#">Top Rated</a></li>
+                  </ul>
+                </div>
+              </li>
+  
+              <li class="nav-item">
+                <div
+                  class="dropdown"
+                  (mouseenter)="showTV()"
+                  (mouseleave)="hideTV()"
+                >
+                  <button
+                    class="btn btn-secondary bg-none"
+                    type="button"
+                    [attr.aria-expanded]="istvshowVisible ? 'true' : 'false'"
+                  >
+                    TV Shows
+                  </button>
+                  <ul class="dropdown-menu" [class.show]="istvshowVisible">
+                    <li><a class="dropdown-item" href="#">Popular</a></li>
+                    <li><a class="dropdown-item" href="#">Airing Today</a></li>
+                    <li><a class="dropdown-item" href="#">On TV</a></li>
+                    <li><a class="dropdown-item" href="#">Top Rated</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li class="nav-item">
+                <div
+                  class="dropdown"
+                  (mouseenter)="showPeople()"
+                  (mouseleave)="hidePeople()"
+                >
+                  <button
+                    class="btn btn-secondary bg-none"
+                    type="button"
+                    [attr.aria-expanded]="istvpeopleVisible ? 'true' : 'false'"
+                  >
+                    People
+                  </button>
+                  <ul class="dropdown-menu" [class.show]="istvpeopleVisible">
+                    <li><a class="dropdown-item" href="#">Popular People</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li class="nav-item">
+                <div
+                  class="dropdown"
+                  (mouseenter)="showMore()"
+                  (mouseleave)="hideMore()"
+                >
+                  <button
+                    class="btn btn-secondary bg-none"
+                    type="button"
+                    [attr.aria-expanded]="istmoreVisible ? 'true' : 'false'"
+                  >
+                    More
+                  </button>
+                  <ul class="dropdown-menu" [class.show]="istmoreVisible">
+                    <li><a class="dropdown-item" href="#">Discussion</a></li>
+                    <li><a class="dropdown-item" href="#">Leader Board</a></li>
+                    <li><a class="dropdown-item" href="#">Support</a></li>
+                    <li><a class="dropdown-item" href="#">API</a></li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <div class="un-list">
+                <ul>
+                  <li><a href="login">Login</a></li>
+                  <li><a href="signup">JoinTMDB</a></li>
+                </ul>
+              </div>
+  
+              <!-- ---------------------- Search Icon and TextBox Area Start --------------------------- -->
+  
+              <div class="container mt-5">
+                <div class="search-icon" (click)="toggleSearchBox()">
+                  <i class="search-btn flaticon-search"></i>
+                  <i class="close-btn fas fa-times"></i>
+                  <i class="fas fa-search"></i>
+                </div>
+                <div class="search-box" [hidden]="!showSearchBox">
+                  <input type="text" placeholder="Search..." />
+                </div>
+              </div>
+  
+              <!-- <mat-icon
+                aria-hidden="false"
+                aria-label="Example home icon"
+                fontIcon="home"
+              ></mat-icon> -->
+  
+              <!-- ---------------------- Search Icon and TextBox Area end --------------------------- -->
+            </form>
+          </div>
+        </div>
+      </nav>
+    </div>
+</div>

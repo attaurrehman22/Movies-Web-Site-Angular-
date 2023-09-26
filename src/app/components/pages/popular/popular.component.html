@@ -1,0 +1,161 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <div class="col-12 m-4">
+        <h3 class="font-weight-bold">Popular Movies</h3>
+      </div>
+
+      <div class="col-12 d-flex">
+        <div class="col-2">
+          <div class="col-12 mx-3 border rounded">
+            <div>
+              <button
+                class="custom-button border rounded"
+                (click)="sortClick()"
+              >
+                Sort
+                <span class="arrow">&gt;</span>
+              </button>
+            </div>
+            <div *ngIf="sortdiv" class="mt-2">
+              <p class="mx-2">Sort Resulted By</p>
+              <div class="dropdown mx-2">
+                <button class="btn btn-secondary" (click)="sorDropdown()">
+                  Popularity Descending
+                </button>
+                <div class="" *ngIf="sortdrop">
+                  <a
+                    class="dropdown-item text-decoration-none text-black"
+                    *ngIf="sortdrop"
+                    href="#"
+                    >Action</a
+                  >
+                  <a
+                    class="dropdown-item text-decoration-none"
+                    *ngIf="sortdrop"
+                    href="#"
+                    >Another action</a
+                  >
+                  <a
+                    class="dropdown-item text-decoration-none"
+                    *ngIf="sortdrop"
+                    href="#"
+                    >Something else here</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 mx-3 mt-3 border rounded">
+            <div>
+              <button
+                class="custom-button border rounded"
+                (click)="whereClick()"
+              >
+                Where To Watch
+
+                <button type="button" class="position-relative">
+                  <span
+                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary text-black"
+                  >
+                    9
+                    <span class="visually-hidden">unread messages</span>
+                  </span>
+                </button>
+
+                <span class="arrow">&gt;</span>
+              </button>
+            </div>
+            <div *ngIf="wheretowatch" class="mt-2">
+              <div class="d-flex">
+                <p class="mx-2 d-flex">My Services</p>
+
+                <button class="btn border rounded text-black bg-secondary">
+                  4
+                </button>
+              </div>
+              <!-- check box code here -->
+              <div class="row mt-0 mx-0 d-flex">
+                
+                  <div class="col-1">
+                    <input
+                      class="mt-0"
+                      type="checkbox"
+                      id="checkBoxId"
+                      [(ngModel)]="checkBoxValue"
+                    />
+                  </div>
+                  <div class="col-11 mx-0 bg-info">
+                    <!-- <p>Restrict searches to my subscribed services?</p> -->
+                    <p class="m-0">Restrict searches to my
+                    subscribed services?</p>
+                  </div>
+                
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 mx-3 mt-3 border rounded">
+            <div>
+              <button
+                class="custom-button border rounded"
+                (click)="filterofClick()"
+              >
+                Where To Watch
+                <span class="arrow">&gt;</span>
+              </button>
+            </div>
+            <div *ngIf="filters" class="mt-2">
+              <p class="mx-2">My Services</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-9 mx-5">
+          <div class="trending-div">
+            <div class="div-for-trending-data">
+              <div class="movie-Popular-container">
+                <div
+                  *ngFor="let t of resultoftrendingmovies"
+                  class="movie-Popular-item border rounded"
+                >
+                  <div class="z-0 position-absolute p-5 rounded-3 bg-none mt-5">
+                    <div class="progress1 mx-auto mt-5">
+                      <div
+                        class="progress-value bg-none w-100 h-100 bg-primary rounded-circle d-flex align-items-center justify-content-center"
+                        [class.yellow-border]="t.vote_average >= 8"
+                        [class.green-border]="
+                          t.vote_average < 8 && t.vote_average >= 6
+                        "
+                      >
+                        <div class="h7 font-weight-bold">
+                          {{ t.vote_average | number : "1.0-0" }}0<sup
+                            class="small"
+                            >%</sup
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <img
+                    src="https://image.tmdb.org/t/p/original/{{
+                      t.poster_path
+                    }}"
+                    alt="Movie Poster"
+                    class="movie-Popular-image"
+                  />
+
+                  <div class="movie-Popular-details">
+                    <p class="movie-Popular-name">{{ t.original_title }}</p>
+                    <p class="movie-Popular-date">{{ t.release_date }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

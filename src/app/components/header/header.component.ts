@@ -1,13 +1,13 @@
 import { Component,ViewChild,ElementRef,AfterViewInit  } from '@angular/core';
-import { ServiceService } from './services/service.service';
+import { ServiceService } from 'src/app/services/service.service';
 import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-header',
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.css']
 })
-export class AppComponent implements AfterViewInit{
+export class HeaderComponent implements AfterViewInit{
   title = 'tmdbproject';
  
   constructor(private service:ServiceService)

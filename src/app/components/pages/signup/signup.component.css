@@ -1,0 +1,29 @@
+/* Styling for the ul element */
+ul.tick-list {
+    list-style-type: none; /* Remove default bullet points */
+    padding-left: 0; /* Remove default padding */
+  }
+  
+  /* Styling for the li element */
+  ul.tick-list li {
+    position: relative; /* Needed for positioning the tick icon */
+    padding-left: 25px; /* Create space for the tick icon */
+    font-family: sans-serif; /* Replace with the name of your true tick font */
+    font-size: 16px; /* Adjust the font size as needed */
+  }
+  
+  /* Pseudo-element for the tick icon */
+  ul.tick-list li::before {
+    content: "✓"; /* Replace with the Unicode character code for the tick symbol, if necessary */
+    position: absolute;
+    left: 5px;
+    top: 0;
+    font-weight: bold;
+  }
+  .bg-color-change:hover {
+    background-color: rgba(3,37,65,1); /* Change this to your desired hover background color */
+  }
+  .text-blue {
+    color: rgb(117, 117, 240);
+    font-weight: bold;
+  }

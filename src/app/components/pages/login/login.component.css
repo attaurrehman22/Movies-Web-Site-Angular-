@@ -1,0 +1,7 @@
+.bg-color-change:hover {
+    background-color: rgba(3,37,65,1); /* Change this to your desired hover background color */
+  }
+  .text-blue {
+    color: rgb(143, 143, 174);
+    font-weight: bold;
+  }
