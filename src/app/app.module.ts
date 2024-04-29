@@ -19,6 +19,8 @@ import { LeaderboardComponent } from './components/pages/leaderboard/leaderboard
 import { JointodaycomponentComponent } from './components/pages/jointodaycomponent/jointodaycomponent.component';
 import { WhatspopularcomponentComponent } from './components/pages/whatspopularcomponent/whatspopularcomponent.component';
 import { CarousalcomponentComponent } from './components/pages/carousalcomponent/carousalcomponent.component';
+import { TrendingandfreetowatchComponent } from './components/pages/trendingandfreetowatch/trendingandfreetowatch.component';
+import { FreetowatchcomponentComponent } from './components/pages/freetowatchcomponent/freetowatchcomponent.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { CarousalcomponentComponent } from './components/pages/carousalcomponent
     LeaderboardComponent,
     JointodaycomponentComponent,
     WhatspopularcomponentComponent,
-    CarousalcomponentComponent
+    CarousalcomponentComponent,
+    TrendingandfreetowatchComponent,
+    FreetowatchcomponentComponent
   ],
   imports: [
     BrowserModule,

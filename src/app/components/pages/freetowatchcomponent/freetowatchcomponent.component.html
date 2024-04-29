@@ -1,0 +1,30 @@
+<div class="latest-Popular-div">
+    <div class="div-for-trending-heading">
+      <div class="row">
+        <div class="col-2">
+          <h4>Free To Watch</h4>
+        </div>
+        <div class="col-3">
+          <div class="div-for-trending-button">
+            <button
+              type="button"
+              [class.active]="watchOption === 'movies'"
+              (click)="watchBackground('movies')"
+            >
+              Movies
+            </button>
+            <button
+              type="button"
+              [class.active]="watchOption === 'tv'"
+              (click)="watchBackground('tv')"
+            >
+              TV
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <app-whatspopularcomponent></app-whatspopularcomponent>
+  
+  </div>

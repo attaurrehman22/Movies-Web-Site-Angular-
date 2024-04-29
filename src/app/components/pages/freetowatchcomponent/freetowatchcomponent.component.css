@@ -1,0 +1,153 @@
+
+.trending-div {
+    width: 100%;
+    background: none;
+    height: 400px;
+  }
+  .div-for-trending-heading {
+    margin-top: 30px;
+    margin-left: 30px;
+    height: 25px;
+    width: 90%;
+  }
+  .div-for-trending-button {
+    height: 35px;
+    border: 1px solid black;
+    border-radius: 18px;
+    width: 202px;
+  }
+  .div-for-trending-button button {
+    height: 34px;
+    width: 100px;
+  }
+  .btn-tollbox-group {
+    margin-left: 10px;
+    border-radius: 150px;
+    border: 1px solid black;
+  }
+  .tollbox-for-trending {
+    margin-left: 15px;
+    background: #ffff;
+    font-size: 1em;
+    white-space: nowrap;
+  }
+  .tollbox-button-style1 {
+    margin-left: 0;
+    height: 40px;
+  }
+  .tollbox-button-style2 {
+    height: 40px;
+  }
+  .active {
+    background: linear-gradient(to right, #969b97 0, #0a4e3e 100%);
+    border-radius: 150px;
+  }
+  .div-for-trending-data {
+    margin-top: 25px;
+    height: 370px;
+    background-image: url("https://www.themoviedb.org/assets/2/v4/misc/trending-bg-39afc2a5f77e31d469b25c187814c0a2efef225494c038098d62317d923f8415.svg");
+    background-position: center;
+    background-size: cover;
+  }
+  .rowposter {
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    height: 250px;
+    margin-left: 30px;
+  }
+
+  .rowimg {
+    max-height: 100px;
+    object-fit: contain;
+    width: 100%;
+    box-sizing: content-box;
+    transition: transform 450ms;
+    margin-right: 20px;
+    border-radius: 25px;
+  }
+  .movie-Popular-container {
+    height: 300px;
+    width: 1861px;
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: auto;
+    position: relative;
+    margin-left: 30px;
+  }
+  .movie-Popular-item {
+    display: inline-block;
+    padding: 6px;
+    height: 300px;
+    width: 400px;
+    margin-right: 10px;
+    align-items: center;
+    justify-content: center;
+    object-fit: contain;
+    box-sizing: content-box;
+    transition: transform 450ms;
+    border-radius: 25px;
+  }
+  .movie-Popular-container::-webkit-scrollbar {
+    display: none;
+  }
+  .progress1 {
+    width: 50px;
+    height: 50px;
+    background: none;
+    position: absolute;
+    left: 4px;
+    top: 74px;
+  }
+  .progress1::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 6px solid #eee;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .progress1 > span {
+    width: 50%;
+    height: 50%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+  }
+  .progress1 .progress-right {
+    right: 10;
+  }
+  .progress1 .progress-value {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .movie-Popular-image {
+    width: 140px;
+    height: 200px;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    box-sizing: content-box;
+    transition: transform 450ms;
+  }
+  .movie-Popular-details {
+    height: 50px;
+    width: 140px;
+    text-align: left;
+  }
+  .movie-Popular-name {
+    font-weight: bold;
+    color: black;
+    height: 25px;
+    font-size: 15px;
+    margin-top: 18px;
+  }
+  .movie-Popular-date {
+    color: black;
+    font-size: 12px;
+    margin-top: 36px;
+  }

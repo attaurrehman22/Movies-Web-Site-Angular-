@@ -1,63 +1,7 @@
 <app-carousalcomponent></app-carousalcomponent>
 
 <!-- ----------------- Trending Start  ------------------------- -->
-<div class="trending-div">
-  <div class="div-for-trending-heading">
-    <div class="row">
-      <div class="col-1">
-        <h4>Trending</h4>
-      </div>
-      <div class="col-2">
-        <div class="div-for-trending-button">
-          <button
-            type="button"
-            [class.active]="backselectedOption === 'today'"
-            (click)="changeBackground('today')"
-          >
-            Today
-          </button>
-          <button
-            type="button"
-            [class.active]="backselectedOption === 'thisWeek'"
-            (click)="changeBackground('thisWeek')"
-          >
-            This Week
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="div-for-trending-data">
-    <div class="movie-Popular-container">
-      <div *ngFor="let t of resultoftrendingmovies" class="movie-Popular-item">
-        <div class="z-0 position-absolute p-5 rounded-3 bg-none mt-5">
-          <div class="progress1 mx-auto mt-5">
-            <div
-              class="progress-value bg-none w-100 h-100 bg-primary rounded-circle d-flex align-items-center justify-content-center"
-            >
-              <div class="h7 font-weight-bold">
-                {{ t.vote_average | number : "1.0-0" }}0<sup class="small"
-                  >%</sup
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-        <img
-          src="https://image.tmdb.org/t/p/original/{{ t.poster_path }}"
-          alt="Movie Poster"
-          class="movie-Popular-image"
-        />
-
-        <div class="movie-Popular-details">
-          <p class="movie-Popular-name">{{ t.original_title }}</p>
-          <p class="movie-Popular-date">{{ t.release_date }}</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<app-trendingandfreetowatch></app-trendingandfreetowatch>
 
 <!-- ----------------- Trending end  ------------------------- -->
 
@@ -210,7 +154,10 @@
 
 <!-- ----------------- Free to Watch start ------------------------- -->
 
-<div class="latest-Popular-div">
+
+<app-freetowatchcomponent></app-freetowatchcomponent>
+
+<!-- <div class="latest-Popular-div">
   <div class="div-for-trending-heading">
     <div class="row">
       <div class="col-2">
@@ -239,7 +186,7 @@
 
   <app-whatspopularcomponent></app-whatspopularcomponent>
 
-</div>
+</div> -->
 
 <!-- ----------------- Free to Watch end ------------------------- -->
 
