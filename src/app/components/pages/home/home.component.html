@@ -1,732 +1,647 @@
+<app-carousalcomponent></app-carousalcomponent>
 
-<div class="size-giving">
-    <div class="homepage-image">
-      <div class="upper-image-text">
-        <h2 style="color: white; font-weight: bold; font-size: 30px">
-          Well Come.
-        </h2>
-        <p style="color: white; font-size: 30px">
-          Millions of movies, TV shows and people to discover. Explore now.
-        </p>
+<!-- ----------------- Trending Start  ------------------------- -->
+<div class="trending-div">
+  <div class="div-for-trending-heading">
+    <div class="row">
+      <div class="col-1">
+        <h4>Trending</h4>
       </div>
-      <div class="lower-image-text">
-        <div class="searbox">
-          <input
-            class="textinput"
-            type="search"
-            placeholder="   Search for a movie,tv,show,person....."
-            aria-label="Search"
-          />
-          <button class="searbox-button" type="submit">Search</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ----------------- Trending Start  ------------------------- -->
-  <div class="trending-div">
-    <div class="div-for-trending-heading">
-      <div class="row">
-        <div class="col-1">
-          <h4>Trending</h4>
-        </div>
-        <div class="col-2">
-          <div class="div-for-trending-button">
-            <button
-              type="button"
-              [class.active]="backselectedOption === 'today'"
-              (click)="changeBackground('today')"
-            >
-              Today
-            </button>
-            <button
-              type="button"
-              [class.active]="backselectedOption === 'thisWeek'"
-              (click)="changeBackground('thisWeek')"
-            >
-              This Week
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="div-for-trending-data">
-      <div class="movie-Popular-container">
-        <div
-          *ngFor="let t of resultoftrendingmovies"
-          class="movie-Popular-item"
-        >
-          <div class="z-0 position-absolute p-5 rounded-3 bg-none mt-5">
-            <div class="progress1 mx-auto mt-5">
-              <div
-                class="progress-value bg-none w-100 h-100 bg-primary rounded-circle d-flex align-items-center justify-content-center"
-              >
-                <div class="h7 font-weight-bold">
-                  {{ t.vote_average | number : "1.0-0" }}0<sup class="small"
-                    >%</sup
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-          <img
-            src="https://image.tmdb.org/t/p/original/{{ t.poster_path }}"
-            alt="Movie Poster"
-            class="movie-Popular-image"
-          />
-
-          <div class="movie-Popular-details">
-            <p class="movie-Popular-name">{{ t.original_title }}</p>
-            <p class="movie-Popular-date">{{ t.release_date }}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ----------------- Trending end  ------------------------- -->
-
-  <!-- ----------------- Latest Trailer start ------------------------- -->
-
-  <div class="latest-trailer-div">
-    <div class="div-for-trailer-heading">
-      <div class="row">
-        <div class="col-2">
-          <h4 style="color: white; margin-top: 10px; margin-left: 10px;font-weight: bold">Latest Trailer</h4>
-        </div>
-        <div class="col-3 mt-2">
-          <div class="div-for-trailer-button">
-            <button
-              type="button"
-              [class.active]="trailerOption === 'streaming'"
-              (click)="trailerBackground('streaming')"
-            >
-              Streaming
-            </button>
-            <button
-              type="button"
-              [class.active]="trailerOption === 'ontv'"
-              (click)="trailerBackground('ontv')"
-            >
-              On TV
-            </button>
-            <button
-              type="button"
-              [class.active]="trailerOption === 'intheaters'"
-              (click)="trailerBackground('intheaters')"
-            >
-              In Theaters
-            </button>
-            <button
-              type="button"
-              [class.active]="trailerOption === 'forrent'"
-              (click)="trailerBackground('forrent')"
-            >
-              For Rent
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="div-for-trailer-data">
-      <div class="movie-container">
-        <div *ngFor="let t of resultoftrendingmovies" class="movie-item">
-          <img
-            src="https://image.tmdb.org/t/p/original/{{ t.poster_path }}"
-            alt="Movie Poster"
-            class="movie-image"
-          />
-          <div class="movie-details">
-            <p class="movie-name">{{ t.original_title }}</p>
-            <p class="movie-date">{{ t.release_date }}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ----------------- Latest Trailer end ------------------------- -->
-
-  <!-- ----------------- What's Popular start ------------------------- -->
-
-  <div class="latest-Popular-div">
-    <div class="div-for-Popular-heading">
-      <div class="row">
-        <div class="col-2">
-          <h4 style="color: black; font-weight: bold">What's Popular</h4>
-        </div>
-        <div class="col-3">
-          <div class="div-for-Popular-button">
-            <button
-              type="button"
-              [class.active]="popularOption === 'streaming'"
-              (click)="popularBackground('streaming')"
-            >
-              Streaming
-            </button>
-            <button
-              type="button"
-              [class.active]="popularOption === 'ontv'"
-              (click)="popularBackground('ontv')"
-            >
-              On TV
-            </button>
-            <button
-              type="button"
-              [class.active]="popularOption === 'intheaters'"
-              (click)="popularBackground('intheaters')"
-            >
-              In Theaters
-            </button>
-            <button
-              type="button"
-              [class.active]="popularOption === 'forrent'"
-              (click)="popularBackground('forrent')"
-            >
-              For Rent
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="div-for-Popular-data">
-      <div class="movie-Popular-container">
-        <div
-          *ngFor="let t of resultoftrendingmovies"
-          class="movie-Popular-item"
-        >
-          <div class="z-0 position-absolute p-5 rounded-3 bg-none mt-5 ml-2">
-            <div class="progress1 mx-auto mt-5">
-              <div
-                class="progress-value bg-none w-100 h-100 bg-primary rounded-circle d-flex align-items-center justify-content-center"
-              >
-                <div class="h7 font-weight-bold">
-                  {{ t.vote_average | number : "1.0-0" }}0<sup class="small"
-                    >%</sup
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-          <img
-            src="https://image.tmdb.org/t/p/original/{{ t.poster_path }}"
-            alt="Movie Poster"
-            class="movie-Popular-image"
-          />
-
-          <div class="movie-Popular-details">
-            <p class="movie-Popular-name">{{ t.original_title }}</p>
-            <p class="movie-Popular-date">{{ t.release_date }}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ----------------- What's Popular end ------------------------- -->
-
-  <!-- ----------------- Free to Watch start ------------------------- -->
-
-  <div class="latest-Popular-div">
-    <div class="div-for-trending-heading">
-      <div class="row">
-        <div class="col-2">
-          <h4>Free To Watch</h4>
-        </div>
-        <div class="col-3">
-          <div class="div-for-trending-button">
-            <button
-              type="button"
-              [class.active]="watchOption === 'movies'"
-              (click)="watchBackground('movies')"
-            >
-              Movies
-            </button>
-            <button
-              type="button"
-              [class.active]="watchOption === 'tv'"
-              (click)="watchBackground('tv')"
-            >
-              TV
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="div-for-Popular-data">
-      <div class="movie-Popular-container">
-        <div
-          *ngFor="let t of resultoftrendingmovies"
-          class="movie-Popular-item"
-        >
-          <div class="z-0 position-absolute p-5 rounded-3 bg-none mt-5 ml-2">
-            <div class="progress1 mx-auto mt-5">
-              <div
-                class="progress-value bg-none w-100 h-100 bg-primary rounded-circle d-flex align-items-center justify-content-center"
-              >
-                <div class="h7 font-weight-bold">
-                  {{ t.vote_average | number : "1.0-0" }}0<sup class="small"
-                    >%</sup
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-          <img
-            src="https://image.tmdb.org/t/p/original/{{ t.poster_path }}"
-            alt="Movie Poster"
-            class="movie-Popular-image"
-          />
-
-          <div class="movie-Popular-details">
-            <p class="movie-Popular-name">{{ t.original_title }}</p>
-            <p class="movie-Popular-date">{{ t.release_date }}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ----------------- Free to Watch end ------------------------- -->
-
-  <!-- ----------------- Join Today Start ------------------------- -->
-
-  <div class="div-for-join-data">
-    <div class="row ml-3">
-      <div class="h-50 mt-5 text-white font-weight-bold head-of-join">
-        <h2>Join Today</h2>
-      </div>
-      <div class="col-11 join-div">
-        <div class="col-6">
-          <p class="text-white">
-            Get access to maintain your own custom personal lists, track what
-            you've seen and search and filter for what to watch
-            next—regardless if it's in theatres, on TV or available on popular
-            streaming services like Netflix, Amazon Prime Video, Zee5, Sun
-            Nxt, and Rooster Teeth.
-          </p>
+      <div class="col-2">
+        <div class="div-for-trending-button">
           <button
             type="button"
-            class="btn btn-outline-primary text-white font-weight-bold bg-primary"
+            [class.active]="backselectedOption === 'today'"
+            (click)="changeBackground('today')"
           >
-            Sign Up
+            Today
+          </button>
+          <button
+            type="button"
+            [class.active]="backselectedOption === 'thisWeek'"
+            (click)="changeBackground('thisWeek')"
+          >
+            This Week
           </button>
         </div>
-        <div class="col-4">
-          <ul class="unorder-list-ofjoin">
-            <li class="text-white">Enjoy TMDB ad free</li>
-            <li class="text-white">Maintain a personal watchlist</li>
-            <li class="text-white">
-              Filter by your subscribed streaming services and find something
-              to watch
-            </li>
-            <li class="text-white">
-              Log the movies and TV shows you've seen
-            </li>
-            <li class="text-white">Build custom lists</li>
-            <li class="text-white">Contribute to and improve our database</li>
-          </ul>
-        </div>
       </div>
     </div>
   </div>
 
-  <!-- ----------------- Join Today end ------------------------- -->
+  <div class="div-for-trending-data">
+    <div class="movie-Popular-container">
+      <div *ngFor="let t of resultoftrendingmovies" class="movie-Popular-item">
+        <div class="z-0 position-absolute p-5 rounded-3 bg-none mt-5">
+          <div class="progress1 mx-auto mt-5">
+            <div
+              class="progress-value bg-none w-100 h-100 bg-primary rounded-circle d-flex align-items-center justify-content-center"
+            >
+              <div class="h7 font-weight-bold">
+                {{ t.vote_average | number : "1.0-0" }}0<sup class="small"
+                  >%</sup
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <img
+          src="https://image.tmdb.org/t/p/original/{{ t.poster_path }}"
+          alt="Movie Poster"
+          class="movie-Popular-image"
+        />
 
-  <!-- ----------------- Leader Borad start ------------------------- -->
-
-  <div class="div-for-leader-data">
-    <div>
-      <div class="h-50 mt-2 font-weight-bold head-of-join d-flex">
-        <h3>Leaderboard</h3>
-        <ul class="custom-list">
-          <li class="green-dot">All time edits</li>
-          <li class="red-dot">Edit this Week</li>
-        </ul>
+        <div class="movie-Popular-details">
+          <p class="movie-Popular-name">{{ t.original_title }}</p>
+          <p class="movie-Popular-date">{{ t.release_date }}</p>
+        </div>
       </div>
     </div>
+  </div>
+</div>
+
+<!-- ----------------- Trending end  ------------------------- -->
+
+<!-- ----------------- Latest Trailer start ------------------------- -->
+
+<div class="latest-trailer-div">
+  <div class="div-for-trailer-heading">
     <div class="row">
-      <div class="col-11 leader-board-div">
-        <div class="col-5">
-          <div class="d-flex mt-1">
-            <div>
-              <div class="col-1">
-                <img
-                  class="h-30 w-30 rounded-5"
-                  src="../assets/img1.jpg"
-                  alt="img"
-                />
-              </div>
-            </div>
-            <div class="col-4 h-80 w-100">
-              <div>Ys_</div>
-              <div class="col-1 progress d-flex">
-                <div
-                  class="progress-bar bg-info"
-                  role="progressbar"
-                  style="width: 100%"
-                  aria-valuenow="70"
-                  aria-valuemin="0"
-                  aria-valuemax="10"
-                >
-                  <!-- 71% -->
-                </div>
-              </div>
-              <div class="progress mt-2">
-                <div
-                  class="progress-bar bg-danger"
-                  role="progressbar"
-                  style="width: 100%"
-                  aria-valuenow="70"
-                  aria-valuemin="0"
-                  aria-valuemax="70"
-                ></div>
-              </div>
-            </div>
-          </div>
+      <div class="col-2">
+        <h4
+          style="
+            color: white;
+            margin-top: 10px;
+            margin-left: 10px;
+            font-weight: bold;
+          "
+        >
+          Latest Trailer
+        </h4>
+      </div>
+      <div class="col-3 mt-2">
+        <div class="div-for-trailer-button">
+          <button
+            type="button"
+            [class.active]="trailerOption === 'streaming'"
+            (click)="trailerBackground('streaming')"
+          >
+            Streaming
+          </button>
+          <button
+            type="button"
+            [class.active]="trailerOption === 'ontv'"
+            (click)="trailerBackground('ontv')"
+          >
+            On TV
+          </button>
+          <button
+            type="button"
+            [class.active]="trailerOption === 'intheaters'"
+            (click)="trailerBackground('intheaters')"
+          >
+            In Theaters
+          </button>
+          <button
+            type="button"
+            [class.active]="trailerOption === 'forrent'"
+            (click)="trailerBackground('forrent')"
+          >
+            For Rent
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 
-          <div class="d-flex mt-2">
-            <div>
-              <div class="col-1">
-                <img
-                  class="h-40 w-40 rounded-5"
-                  src="../assets/img2.jpg"
-                  alt="img"
-                />
-              </div>
-            </div>
-            <div class="col-4 h-100 w-100">
-              <div>talestalker</div>
-              <div class="col-12 progress d-flex">
-                <div
-                  class="progress-bar bg-info"
-                  role="progressbar"
-                  style="width: 100%"
-                  aria-valuenow="100"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                >
-                  <!-- 71% -->
-                </div>
-              </div>
-              <div class="col-11 progress mt-2">
-                <div
-                  class="progress-bar bg-danger"
-                  role="progressbar"
-                  style="width: 100%"
-                  aria-valuenow="100"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                ></div>
-              </div>
-            </div>
-          </div>
+  <div class="div-for-trailer-data">
+    <div class="movie-container">
+      <div *ngFor="let t of resultoftrendingmovies" class="movie-item">
+        <img
+          src="https://image.tmdb.org/t/p/original/{{ t.poster_path }}"
+          alt="Movie Poster"
+          class="movie-image"
+        />
+        <div class="movie-details">
+          <p class="movie-name">{{ t.original_title }}</p>
+          <p class="movie-date">{{ t.release_date }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-          <div class="d-flex mt-2">
-            <div>
-              <div class="col-1">
-                <img
-                  class="h-40 w-40 rounded-5"
-                  src="../assets/img2.jpg"
-                  alt="img"
-                />
-              </div>
-            </div>
-            <div class="col-4 h-100 w-100">
-              <div>saulute213</div>
-              <div class="col-2 progress d-flex">
-                <div
-                  class="progress-bar bg-info"
-                  role="progressbar"
-                  style="width: 100%"
-                  aria-valuenow="100"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                >
-                  <!-- 71% -->
-                </div>
-              </div>
-              <div class="col-8 progress mt-2">
-                <div
-                  class="progress-bar bg-danger"
-                  role="progressbar"
-                  style="width: 100%"
-                  aria-valuenow="100"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                ></div>
-              </div>
-            </div>
-          </div>
+<!-- ----------------- Latest Trailer end ------------------------- -->
 
-          <div class="d-flex mt-2">
-            <div>
-              <div class="col-1">
-                <img
-                  class="h-40 w-40 rounded-5"
-                  src="../assets/img2.jpg"
-                  alt="img"
-                />
-              </div>
-            </div>
-            <div class="col-4 h-100 w-100">
-              <div>nhkchk</div>
-              <div class="col-2 progress d-flex">
-                <div
-                  class="progress-bar bg-info"
-                  role="progressbar"
-                  style="width: 100%"
-                  aria-valuenow="100"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                >
-                  <!-- 71% -->
-                </div>
-              </div>
-              <div class="col-7 progress mt-2">
-                <div
-                  class="progress-bar bg-danger"
-                  role="progressbar"
-                  style="width: 100%"
-                  aria-valuenow="100"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                ></div>
-              </div>
-            </div>
-          </div>
+<!-- ----------------- What's Popular start ------------------------- -->
 
-          <div class="d-flex mt-2">
-            <div>
-              <div class="col-1">
-                <img
-                  class="h-40 w-40 rounded-5"
-                  src="../assets/img1.jpg"
-                  alt="img"
-                />
-              </div>
-            </div>
-            <div class="col-4 h-100 w-100">
-              <div>qualitylover</div>
-              <div class="col-6 progress d-flex">
-                <div
-                  class="progress-bar bg-info"
-                  role="progressbar"
-                  style="width: 100%"
-                  aria-valuenow="100"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
+<div class="latest-Popular-div">
+  <div class="div-for-Popular-heading">
+    <div class="row">
+      <div class="col-2">
+        <h4 style="color: black; font-weight: bold">What's Popular</h4>
+      </div>
+      <div class="col-3">
+        <div class="div-for-Popular-button">
+          <button
+            type="button"
+            [class.active]="popularOption === 'streaming'"
+            (click)="popularBackground('streaming')"
+          >
+            Streaming
+          </button>
+          <button
+            type="button"
+            [class.active]="popularOption === 'ontv'"
+            (click)="popularBackground('ontv')"
+          >
+            On TV
+          </button>
+          <button
+            type="button"
+            [class.active]="popularOption === 'intheaters'"
+            (click)="popularBackground('intheaters')"
+          >
+            In Theaters
+          </button>
+          <button
+            type="button"
+            [class.active]="popularOption === 'forrent'"
+            (click)="popularBackground('forrent')"
+          >
+            For Rent
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="div-for-Popular-data">
+    <div class="movie-Popular-container">
+      <div *ngFor="let t of resultoftrendingmovies" class="movie-Popular-item">
+        <div class="z-0 position-absolute p-5 rounded-3 bg-none mt-5 ml-2">
+          <div class="progress1 mx-auto mt-5">
+            <div
+              class="progress-value bg-none w-100 h-100 bg-primary rounded-circle d-flex align-items-center justify-content-center"
+            >
+              <div class="h7 font-weight-bold">
+                {{ t.vote_average | number : "1.0-0" }}0<sup class="small"
+                  >%</sup
                 >
-                  <!-- 71% -->
-                </div>
-              </div>
-              <div class="col-6 progress mt-2">
-                <div
-                  class="progress-bar bg-danger"
-                  role="progressbar"
-                  style="width: 100%"
-                  aria-valuenow="100"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                ></div>
               </div>
             </div>
           </div>
         </div>
+        <img
+          src="https://image.tmdb.org/t/p/original/{{ t.poster_path }}"
+          alt="Movie Poster"
+          class="movie-Popular-image"
+        />
 
-        <div class="col-1"></div>
-        <div class="col-5">
-          <div class="d-flex mt-1">
-            <div>
-              <div class="col-1">
-                <img
-                  class="h-30 w-30 rounded-5"
-                  src="../assets/img6.jpg"
-                  alt="img"
-                />
-              </div>
-            </div>
-            <div class="col-4 h-80 w-100">
-              <div>alyv</div>
-              <div class="col-2 progress d-flex">
-                <div
-                  class="progress-bar bg-info"
-                  role="progressbar"
-                  style="width: 100%"
-                  aria-valuenow="70"
-                  aria-valuemin="0"
-                  aria-valuemax="10"
-                >
-                  <!-- 71% -->
-                </div>
-              </div>
-              <div class="col-12 progress mt-2">
-                <div
-                  class="progress-bar bg-danger"
-                  role="progressbar"
-                  style="width: 100%"
-                  aria-valuenow="70"
-                  aria-valuemin="0"
-                  aria-valuemax="70"
-                ></div>
-              </div>
+        <div class="movie-Popular-details">
+          <p class="movie-Popular-name">{{ t.original_title }}</p>
+          <p class="movie-Popular-date">{{ t.release_date }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ----------------- What's Popular end ------------------------- -->
+
+<!-- ----------------- Free to Watch start ------------------------- -->
+
+<div class="latest-Popular-div">
+  <div class="div-for-trending-heading">
+    <div class="row">
+      <div class="col-2">
+        <h4>Free To Watch</h4>
+      </div>
+      <div class="col-3">
+        <div class="div-for-trending-button">
+          <button
+            type="button"
+            [class.active]="watchOption === 'movies'"
+            (click)="watchBackground('movies')"
+          >
+            Movies
+          </button>
+          <button
+            type="button"
+            [class.active]="watchOption === 'tv'"
+            (click)="watchBackground('tv')"
+          >
+            TV
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <app-whatspopularcomponent></app-whatspopularcomponent>
+
+</div>
+
+<!-- ----------------- Free to Watch end ------------------------- -->
+
+<!-- ----------------- Join Today Start ------------------------- -->
+
+<app-jointodaycomponent></app-jointodaycomponent>
+
+<!-- ----------------- Join Today end ------------------------- -->
+
+
+
+<!-- ----------------- Leader Borad start ------------------------- -->
+
+<!-- <div class="div-for-leader-data">
+  <div>
+    <div class="h-50 mt-2 font-weight-bold head-of-join d-flex">
+      <h3>Leaderboard</h3>
+      <ul class="custom-list">
+        <li class="green-dot">All time edits</li>
+        <li class="red-dot">Edit this Week</li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-11 leader-board-div">
+      <div class="col-5">
+        <div class="d-flex mt-1">
+          <div>
+            <div class="col-1">
+              <img
+                class="h-30 w-30 rounded-5"
+                src="../assets/img1.jpg"
+                alt="img"
+              />
             </div>
           </div>
-
-          <div class="d-flex mt-2">
-            <div>
-              <div class="col-1">
-                <img
-                  class="h-40 w-40 rounded-5"
-                  src="../assets/img7.jpg"
-                  alt="img"
-                />
+          <div class="col-4 h-80 w-100">
+            <div>Ys_</div>
+            <div class="col-1 progress d-flex">
+              <div
+                class="progress-bar bg-info"
+                role="progressbar"
+                style="width: 100%"
+                aria-valuenow="70"
+                aria-valuemin="0"
+                aria-valuemax="10"
+              >
+                
               </div>
             </div>
-            <div class="col-4 h-100 w-100">
-              <div>jedi.jesse</div>
-              <div class="col-2 progress d-flex">
-                <div
-                  class="progress-bar bg-info"
-                  role="progressbar"
-                  style="width: 100%"
-                  aria-valuenow="100"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                >
-                  <!-- 71% -->
-                </div>
-              </div>
-              <div class="col-7 progress mt-2">
-                <div
-                  class="progress-bar bg-danger"
-                  role="progressbar"
-                  style="width: 100%"
-                  aria-valuenow="100"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                ></div>
-              </div>
+            <div class="progress mt-2">
+              <div
+                class="progress-bar bg-danger"
+                role="progressbar"
+                style="width: 100%"
+                aria-valuenow="70"
+                aria-valuemin="0"
+                aria-valuemax="70"
+              ></div>
             </div>
           </div>
+        </div>
 
-          <div class="d-flex mt-2">
-            <div>
-              <div class="col-1">
-                <img
-                  class="h-40 w-40 rounded-5"
-                  src="../assets/img2.jpg"
-                  alt="img"
-                />
-              </div>
-            </div>
-            <div class="col-4 h-100 w-100">
-              <div>zeropot</div>
-              <div class="col-2 progress d-flex">
-                <div
-                  class="progress-bar bg-info"
-                  role="progressbar"
-                  style="width: 100%"
-                  aria-valuenow="100"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                >
-                  <!-- 71% -->
-                </div>
-              </div>
-              <div class="col-5 progress mt-2">
-                <div
-                  class="progress-bar bg-danger"
-                  role="progressbar"
-                  style="width: 100%"
-                  aria-valuenow="100"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                ></div>
-              </div>
+        <div class="d-flex mt-2">
+          <div>
+            <div class="col-1">
+              <img
+                class="h-40 w-40 rounded-5"
+                src="../assets/img2.jpg"
+                alt="img"
+              />
             </div>
           </div>
-
-          <div class="d-flex mt-2">
-            <div>
-              <div class="col-1">
-                <img
-                  class="h-40 w-40 rounded-5"
-                  src="../assets/img2.jpg"
-                  alt="img"
-                />
+          <div class="col-4 h-100 w-100">
+            <div>talestalker</div>
+            <div class="col-12 progress d-flex">
+              <div
+                class="progress-bar bg-info"
+                role="progressbar"
+                style="width: 100%"
+                aria-valuenow="100"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+              
               </div>
             </div>
-            <div class="col-2 h-100 w-100">
-              <div>apeee</div>
-              <div class="col-2 progress d-flex">
-                <div
-                  class="progress-bar bg-info"
-                  role="progressbar"
-                  style="width: 100%"
-                  aria-valuenow="100"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                >
-                  <!-- 71% -->
-                </div>
-              </div>
-              <div class="col-4 progress mt-2">
-                <div
-                  class="progress-bar bg-danger"
-                  role="progressbar"
-                  style="width: 100%"
-                  aria-valuenow="100"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                ></div>
-              </div>
+            <div class="col-11 progress mt-2">
+              <div
+                class="progress-bar bg-danger"
+                role="progressbar"
+                style="width: 100%"
+                aria-valuenow="100"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              ></div>
             </div>
           </div>
+        </div>
 
-          <div class="d-flex mt-2">
-            <div>
-              <div class="col-1">
-                <img
-                  class="h-40 w-40 rounded-5"
-                  src="../assets/img1.jpg"
-                  alt="img"
-                />
+        <div class="d-flex mt-2">
+          <div>
+            <div class="col-1">
+              <img
+                class="h-40 w-40 rounded-5"
+                src="../assets/img2.jpg"
+                alt="img"
+              />
+            </div>
+          </div>
+          <div class="col-4 h-100 w-100">
+            <div>saulute213</div>
+            <div class="col-2 progress d-flex">
+              <div
+                class="progress-bar bg-info"
+                role="progressbar"
+                style="width: 100%"
+                aria-valuenow="100"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+        
               </div>
             </div>
-            <div class="col-4 h-100 w-100">
-              <div>ucdrlg</div>
-              <div class="col-2 progress d-flex">
-                <div
-                  class="progress-bar bg-info"
-                  role="progressbar"
-                  style="width: 100%"
-                  aria-valuenow="100"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                >
-                  <!-- 71% -->
-                </div>
+            <div class="col-8 progress mt-2">
+              <div
+                class="progress-bar bg-danger"
+                role="progressbar"
+                style="width: 100%"
+                aria-valuenow="100"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              ></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="d-flex mt-2">
+          <div>
+            <div class="col-1">
+              <img
+                class="h-40 w-40 rounded-5"
+                src="../assets/img2.jpg"
+                alt="img"
+              />
+            </div>
+          </div>
+          <div class="col-4 h-100 w-100">
+            <div>nhkchk</div>
+            <div class="col-2 progress d-flex">
+              <div
+                class="progress-bar bg-info"
+                role="progressbar"
+                style="width: 100%"
+                aria-valuenow="100"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                
               </div>
-              <div class="col-4 progress mt-2">
-                <div
-                  class="progress-bar bg-danger"
-                  role="progressbar"
-                  style="width: 100%"
-                  aria-valuenow="100"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                ></div>
+            </div>
+            <div class="col-7 progress mt-2">
+              <div
+                class="progress-bar bg-danger"
+                role="progressbar"
+                style="width: 100%"
+                aria-valuenow="100"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              ></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="d-flex mt-2">
+          <div>
+            <div class="col-1">
+              <img
+                class="h-40 w-40 rounded-5"
+                src="../assets/img1.jpg"
+                alt="img"
+              />
+            </div>
+          </div>
+          <div class="col-4 h-100 w-100">
+            <div>qualitylover</div>
+            <div class="col-6 progress d-flex">
+              <div
+                class="progress-bar bg-info"
+                role="progressbar"
+                style="width: 100%"
+                aria-valuenow="100"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                
               </div>
+            </div>
+            <div class="col-6 progress mt-2">
+              <div
+                class="progress-bar bg-danger"
+                role="progressbar"
+                style="width: 100%"
+                aria-valuenow="100"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-1"></div>
+      <div class="col-5">
+        <div class="d-flex mt-1">
+          <div>
+            <div class="col-1">
+              <img
+                class="h-30 w-30 rounded-5"
+                src="../assets/img6.jpg"
+                alt="img"
+              />
+            </div>
+          </div>
+          <div class="col-4 h-80 w-100">
+            <div>alyv</div>
+            <div class="col-2 progress d-flex">
+              <div
+                class="progress-bar bg-info"
+                role="progressbar"
+                style="width: 100%"
+                aria-valuenow="70"
+                aria-valuemin="0"
+                aria-valuemax="10"
+              >
+                
+              </div>
+            </div>
+            <div class="col-12 progress mt-2">
+              <div
+                class="progress-bar bg-danger"
+                role="progressbar"
+                style="width: 100%"
+                aria-valuenow="70"
+                aria-valuemin="0"
+                aria-valuemax="70"
+              ></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="d-flex mt-2">
+          <div>
+            <div class="col-1">
+              <img
+                class="h-40 w-40 rounded-5"
+                src="../assets/img7.jpg"
+                alt="img"
+              />
+            </div>
+          </div>
+          <div class="col-4 h-100 w-100">
+            <div>jedi.jesse</div>
+            <div class="col-2 progress d-flex">
+              <div
+                class="progress-bar bg-info"
+                role="progressbar"
+                style="width: 100%"
+                aria-valuenow="100"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                
+              </div>
+            </div>
+            <div class="col-7 progress mt-2">
+              <div
+                class="progress-bar bg-danger"
+                role="progressbar"
+                style="width: 100%"
+                aria-valuenow="100"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              ></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="d-flex mt-2">
+          <div>
+            <div class="col-1">
+              <img
+                class="h-40 w-40 rounded-5"
+                src="../assets/img2.jpg"
+                alt="img"
+              />
+            </div>
+          </div>
+          <div class="col-4 h-100 w-100">
+            <div>zeropot</div>
+            <div class="col-2 progress d-flex">
+              <div
+                class="progress-bar bg-info"
+                role="progressbar"
+                style="width: 100%"
+                aria-valuenow="100"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                
+              </div>
+            </div>
+            <div class="col-5 progress mt-2">
+              <div
+                class="progress-bar bg-danger"
+                role="progressbar"
+                style="width: 100%"
+                aria-valuenow="100"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              ></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="d-flex mt-2">
+          <div>
+            <div class="col-1">
+              <img
+                class="h-40 w-40 rounded-5"
+                src="../assets/img2.jpg"
+                alt="img"
+              />
+            </div>
+          </div>
+          <div class="col-2 h-100 w-100">
+            <div>apeee</div>
+            <div class="col-2 progress d-flex">
+              <div
+                class="progress-bar bg-info"
+                role="progressbar"
+                style="width: 100%"
+                aria-valuenow="100"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                
+              </div>
+            </div>
+            <div class="col-4 progress mt-2">
+              <div
+                class="progress-bar bg-danger"
+                role="progressbar"
+                style="width: 100%"
+                aria-valuenow="100"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              ></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="d-flex mt-2">
+          <div>
+            <div class="col-1">
+              <img
+                class="h-40 w-40 rounded-5"
+                src="../assets/img1.jpg"
+                alt="img"
+              />
+            </div>
+          </div>
+          <div class="col-4 h-100 w-100">
+            <div>ucdrlg</div>
+            <div class="col-2 progress d-flex">
+              <div
+                class="progress-bar bg-info"
+                role="progressbar"
+                style="width: 100%"
+                aria-valuenow="100"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                
+              </div>
+            </div>
+            <div class="col-4 progress mt-2">
+              <div
+                class="progress-bar bg-danger"
+                role="progressbar"
+                style="width: 100%"
+                aria-valuenow="100"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              ></div>
             </div>
           </div>
         </div>
       </div>
     </div>
-
-    <!-- ----------------- Leader Borad end ------------------------- -->
   </div>
+</div> -->
+
+
+<app-leaderboard></app-leaderboard>

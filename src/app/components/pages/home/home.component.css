@@ -1,431 +1,286 @@
-button{
-    background: none;
-    border: none;
+button {
+  background: none;
+  border: none;
 }
-button:hover{
-    background:none ;
+.trending-div {
+  width: 100%;
+  background: none;
+  height: 400px;
 }
-/* ------------------------------------------------------- */
-.size-giving{
-    height: 300px;
-    width: 100%;
-    background-color: lightblue;
+.div-for-trending-heading {
+  margin-top: 30px;
+  margin-left: 30px;
+  height: 25px;
+  width: 90%;
 }
-.homepage-image{
-    height: 300px;
-    background-image: url("../home/homepageimage.jpg");
-    background-size: cover;
-    background-position: center;
-    width: 100%;
-    position: absolute;
+.div-for-trending-button {
+  height: 35px;
+  border: 1px solid black;
+  border-radius: 18px;
+  width: 202px;
 }
-.upper-image-text{
-    height: 80px;
-    width: 80%;
-    margin-left: 30px;
-    margin-top: 90px;
+.div-for-trending-button button {
+  height: 34px;
+  width: 100px;
 }
-.lower-image-text h2{
-    color: white;
+.btn-tollbox-group {
+  margin-left: 10px;
+  border-radius: 150px;
+  border: 1px solid black;
 }
-.lower-image-text{
-    height: 80px;
-    width: 95%;
-    margin-left: 30px;
+.tollbox-for-trending {
+  margin-left: 15px;
+  background: #ffff;
+  font-size: 1em;
+  white-space: nowrap;
 }
-.searbox{
-    margin-top: 40px;
-    height: 40px;
-    width: 100%;
-    background-color: aliceblue;
-    border-radius: 50px;
+.tollbox-button-style1 {
+  margin-left: 0;
+  height: 40px;
 }
-.textinput{
-    height: 38px;
-    width: 90%;
-    background-color: aliceblue;
-    border-top-left-radius: 25px;
-    border-bottom-left-radius: 25px;
-    border: none;
+.tollbox-button-style2 {
+  height: 40px;
 }
-.searbox-button{
-    height: 100%;
-    width: 10%;
-    margin-top: 0;
-    padding: 0;
-    border-radius: 55px;
-    background:linear-gradient(to right,rgba(192,254,207,1) 0%,rgba(1,180,228,1) 100%);
+.active {
+  background: linear-gradient(to right, #969b97 0, #0a4e3e 100%);
+  border-radius: 150px;
 }
-.searbox-button:hover{
-   background:linear-gradient(to right,rgb(84, 220, 118) 0%,rgb(4, 54, 67) 100%);
+.div-for-trending-data {
+  margin-top: 25px;
+  height: 370px;
+  background-image: url("https://www.themoviedb.org/assets/2/v4/misc/trending-bg-39afc2a5f77e31d469b25c187814c0a2efef225494c038098d62317d923f8415.svg");
+  background-position: center;
+  background-size: cover;
 }
-.search-icon {
-    cursor: pointer;
-  }
-  .search-box {
-    display: flex;
-    align-items: center;
-    margin-top: 10px;
-  }
-  .search-box input {
-    width: 200px;
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-.trending-div{
-    width: 100%;
-    background:none;
-    height: 400px;
+.rowposter {
+  display: flex;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  height: 250px;
+  margin-left: 30px;
 }
-.div-for-trending-heading{
-    margin-top: 30px;
-    margin-left: 30px;
-    height: 25px;
-    width: 90%;
+.rowimg {
+  max-height: 100px;
+  object-fit: contain;
+  width: 100%;
+  box-sizing: content-box;
+  transition: transform 450ms;
+  margin-right: 20px;
+  border-radius: 25px;
 }
-.div-for-trending-button{
-    height: 35px;
-    border: 1px solid black;
-    border-radius: 18px;
-    width: 202px;
+.rowimg:hover {
+  transform: scale(1.09);
+  cursor: pointer;
 }
-.div-for-trending-button button{
-    height: 34px;
-    width: 100px;
+.largeposter {
+  max-height: 300px;
 }
-.btn-tollbox-group{
-    margin-left: 10px;
-    border-radius: 150px;
-    border: 1px solid black;
+.rowposter::-webkit-scrollbar {
+  display: none;
 }
-.tollbox-for-trending{
-    margin-left: 15px;
-    background: #ffff;
-    font-size: 1em;
-    white-space: nowrap;
+.rowposter h2 {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 5px 10px;
+  color: white;
+  font-size: 16px;
 }
-.tollbox-button-style1{
-    margin-left: 0;
-    height: 40px;
-}
-.tollbox-button-style2{
-    height: 40px;
-}
-.active{
-    background: linear-gradient(to right,#969b97 0,#0a4e3e 100%);
-    border-radius: 150px;
-}
-.div-for-trending-data{
-    margin-top: 25px;
-    height:370px;
-    background-image: url("https://www.themoviedb.org/assets/2/v4/misc/trending-bg-39afc2a5f77e31d469b25c187814c0a2efef225494c038098d62317d923f8415.svg");
-    background-position: center;
-    background-size: cover;
-}
-.rowposter{
-    display: flex;
-    overflow-y: hidden;
-    overflow-x: scroll;
-    height: 250px;
-    margin-left: 30px;
-}
-.rowimg{
-    max-height: 100px;
-    object-fit: contain;
-    width: 100%;
-    box-sizing: content-box;
-    transition: transform 450ms;
-    margin-right: 20px;
-    border-radius: 25px;
-}
-.rowimg:hover{
-transform: scale(1.09);
-cursor: pointer;
-}
-.largeposter{
-    max-height: 300px;
-}
-.rowposter::-webkit-scrollbar
-{
-    display: none;
-} 
-.rowposter h2{
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 5px 10px;
-    color: white;
-    font-size: 16px;
-}
+
 /* ----------------  latest trailer start   --------------------- */
 .latest-trailer-div {
-    position: relative;
-    width: 100%;
-    height: 400px;
-    background-image: url("../home/1P3QtW1IkivqDrKbbwuR0zCYIf8.jpg");
-    background-size: cover;
-    background-position: center;
-  } 
-.div-for-trailer-heading{
-    margin-top: 30px;
-    margin-left: 30px;
-    height: 25px;
-    width: 90%; 
+  position: relative;
+  width: 100%;
+  height: 400px;
+  background-image: url("../home/1P3QtW1IkivqDrKbbwuR0zCYIf8.jpg");
+  background-size: cover;
+  background-position: center;
 }
-.div-for-trailer-button{
-    height: 35px;
-    border: 1px solid black;
-    border-radius: 18px;
-    width: 402px;
+.div-for-trailer-heading {
+  margin-top: 30px;
+  margin-left: 30px;
+  height: 25px;
+  width: 90%;
 }
-.div-for-trailer-button button{
-    height: 34px;
-    width: 100px;
-    color: #ffff;
-    font-weight: bold;
+.div-for-trailer-button {
+  height: 35px;
+  border: 1px solid black;
+  border-radius: 18px;
+  width: 402px;
 }
-.div-for-trailer-data{
-    margin-top: 25px;
-    height:230px;
+.div-for-trailer-button button {
+  height: 34px;
+  width: 100px;
+  color: #ffff;
+  font-weight: bold;
+}
+.div-for-trailer-data {
+  margin-top: 25px;
+  height: 230px;
 }
 .movie-container {
-    height: 300px;
-    width: 1861px;
-    display: flex;
-    overflow-y: hidden; 
-    overflow-x: scroll;
-    margin-left: 30px;
-  }
-.movie-container::-webkit-scrollbar{
-    display: none;
-} 
+  height: 300px;
+  width: 1861px;
+  display: flex;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  margin-left: 30px;
+}
+.movie-container::-webkit-scrollbar {
+  display: none;
+}
 .movie-item {
-    display: inline-block;
-    padding: 10px;
-    height: 300px;
-    width: 400px;
-    margin-right: 10px;
-    align-items: center;
-    justify-content: center;
-    object-fit: contain;
-    box-sizing: content-box;
-    transition: transform 450ms;
-    border-radius: 25px;
-  }
+  display: inline-block;
+  padding: 10px;
+  height: 300px;
+  width: 400px;
+  margin-right: 10px;
+  align-items: center;
+  justify-content: center;
+  object-fit: contain;
+  box-sizing: content-box;
+  transition: transform 450ms;
+  border-radius: 25px;
+}
 .movie-image {
-    width: 300px; 
-    height: 200px;
-    border-radius: 25px;
-    align-items: center;
-    justify-content: center;
-    box-sizing: content-box;
-    transition: transform 450ms;
-  }
-  .movie-details {
-    height: 30px;
-    width: 300px;
-    text-align: center;
-  }
+  width: 300px;
+  height: 200px;
+  border-radius: 25px;
+  align-items: center;
+  justify-content: center;
+  box-sizing: content-box;
+  transition: transform 450ms;
+}
+.movie-details {
+  height: 30px;
+  width: 300px;
+  text-align: center;
+}
 .movie-name {
-    font-weight: bold;
-    color: #ffff;
-    height: 8px;
-  }
+  font-weight: bold;
+  color: #ffff;
+  height: 8px;
+}
 .movie-date {
-    color: #f0e7e7;
-    font-weight: bold;
-    margin-top: 0;
-  }
-  /* --------------------- What's Popular start ------------------ */
+  color: #f0e7e7;
+  font-weight: bold;
+  margin-top: 0;
+}
+
+/* --------------------- What's Popular start ------------------ */
 .latest-Popular-div {
-    position: relative;
-    width: 100%;
-    height: 400px;
-    background-color:white ;
-  } 
-.div-for-Popular-heading{
-    margin-top: 30px;
-    margin-left: 30px;
-    height: 25px;
-    width: 90%;
+  position: relative;
+  width: 100%;
+  height: 400px;
+  background-color: white;
 }
-.div-for-Popular-button{
-    height: 35px;
-    border: 1px solid black;
-    border-radius: 18px;
-    width: 402px;
+.div-for-Popular-heading {
+  margin-top: 30px;
+  margin-left: 30px;
+  height: 25px;
+  width: 90%;
 }
-.div-for-Popular-button button{
-    height: 34px;
-    width: 100px;
-    color: black;
-    font-weight: bold;
+.div-for-Popular-button {
+  height: 35px;
+  border: 1px solid black;
+  border-radius: 18px;
+  width: 402px;
 }
-.div-for-Popular-data{
-    margin-top: 25px;
-    height:230px;
+.div-for-Popular-button button {
+  height: 34px;
+  width: 100px;
+  color: black;
+  font-weight: bold;
+}
+.div-for-Popular-data {
+  margin-top: 25px;
+  height: 230px;
 }
 .movie-Popular-container {
-    height: 300px;
-    width: 1861px;
-    display: flex;
-    overflow-y: hidden; 
-    overflow-x: auto;
-    position: relative;
-    margin-left: 30px;
-  }
-  .movie-Popular-container::-webkit-scrollbar{
-    display: none;
-} 
-  .movie-Popular-item {
-    display: inline-block;
-    padding: 6px;
-    height: 300px;
-    width: 400px;
-    margin-right: 10px;
-    align-items: center;
-    justify-content: center;
-    object-fit: contain;
-    box-sizing: content-box;
-    transition: transform 450ms;
-    border-radius: 25px;
-  }
-  .movie-Popular-image {
-    width: 140px; 
-    height: 200px;
-    border-radius: 10px;
-    align-items: center;
-    justify-content: center;
-    box-sizing: content-box;
-    transition: transform 450ms;
-  }
-  .movie-Popular-details {
-    height: 50px;
-    width: 140px;
-    text-align: left;
-  }
-  .movie-Popular-name {
-    font-weight: bold;
-    color: black;
-    height: 25px;
-    font-size: 15px;
-    margin-top: 18px;
-  }
-  .movie-Popular-date {
-    color: black;
-    font-size: 12px;
-    margin-top: 36px;
-  }
-.progress1 {
-    width: 50px;
-    height: 50px;
-    background: none;
-    position: absolute;
-    left: 4px;
-    top: 74px;
-  }
-.progress1::after {
-    content: "";
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    border: 6px solid #eee;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-  .progress1>span {
-    width: 50%;
-    height: 50%;
-    overflow: hidden;
-    position: absolute;
-    top: 0;
-    z-index: 1;
-  }
-  .progress1 .progress-right {
-    right: 10;
-  }
-  .progress1 .progress-value {
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-/* --------------------- What's Popular end ------------------ */
-.div-for-join-data {
-    position: relative;
-    width: 100%;
-    height: 260px;
-    background-image: url("../home/1P3QtW1IkivqDrKbbwuR0zCYIf8.jpg");
-    background-size: cover;
-    background-position: center;  
-  } 
-  .head-of-join{
-    margin-left: 40px;
-    width: 60%;
-  }
-  .join-div{
-    margin-left: 40px;
-    display: flex;
-  }
-.unorder-list-ofjoin li {
-    font-size: 13px;
-    color: #ffffff;
-  }
-  .unorder-list-ofjoin li + li {
-    margin-top: 0px;
-  }
-  .col-3 {
-    padding: 0px;
-  }
-  .unorder-list-ofjoin li {
-    padding: 0px;
-    border-radius: 5px;
-  }
-/* ----------------------  Leader Board Start    ------------------- */
-  .div-for-leader-data {
-    position: relative;
-    width: 100%;
-    height: 450px;
-    background-color: #ffffff;
-  } 
-.green-dot::before {
-    content: "";
-    display: inline-block;
-    width: 8px;
-    height: 8px;
-    background-color: green;
-    border-radius: 50%;
-    margin-right: 8px;
-  }
-  .red-dot::before {
-    content: "";
-    display: inline-block;
-    width: 8px;
-    height: 8px;
-    background-color: red;
-    border-radius: 50%;
-    margin-right: 8px;
-  }
- .custom-list {
-    list-style: none;
-  }
-  .leader-board-div{
-    margin-left: 40px;
-    display: flex;
-    height: 375px;
-  }
-/* ------------------------------ Foter Start  ------------------------- */
-@media screen and (max-width: 768px) {
-  .navbar{
-    background-color: rgba(3,37,65,1);
-    align-items: center;
-    top: 0;
-    left: 0;
-    height: 64px;
-    z-index: 10;
-    transition: top .2s linear;
-    width: 100%;
-  }
+  height: 300px;
+  width: 1861px;
+  display: flex;
+  overflow-y: hidden;
+  overflow-x: auto;
+  position: relative;
+  margin-left: 30px;
 }
+.movie-Popular-container::-webkit-scrollbar {
+  display: none;
+}
+.movie-Popular-item {
+  display: inline-block;
+  padding: 6px;
+  height: 300px;
+  width: 400px;
+  margin-right: 10px;
+  align-items: center;
+  justify-content: center;
+  object-fit: contain;
+  box-sizing: content-box;
+  transition: transform 450ms;
+  border-radius: 25px;
+}
+.movie-Popular-image {
+  width: 140px;
+  height: 200px;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+  box-sizing: content-box;
+  transition: transform 450ms;
+}
+.movie-Popular-details {
+  height: 50px;
+  width: 140px;
+  text-align: left;
+}
+.movie-Popular-name {
+  font-weight: bold;
+  color: black;
+  height: 25px;
+  font-size: 15px;
+  margin-top: 18px;
+}
+.movie-Popular-date {
+  color: black;
+  font-size: 12px;
+  margin-top: 36px;
+}
+.progress1 {
+  width: 50px;
+  height: 50px;
+  background: none;
+  position: absolute;
+  left: 4px;
+  top: 74px;
+}
+.progress1::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 6px solid #eee;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.progress1 > span {
+  width: 50%;
+  height: 50%;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+}
+.progress1 .progress-right {
+  right: 10;
+}
+.progress1 .progress-value {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+

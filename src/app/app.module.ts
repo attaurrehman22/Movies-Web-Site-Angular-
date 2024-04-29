@@ -15,6 +15,10 @@ import { HomeComponent } from './components/pages/home/home.component';
 import { LoginComponent } from './components/pages/login/login.component';
 import { PopularComponent } from './components/pages/popular/popular.component';
 import { FormsModule } from '@angular/forms';
+import { LeaderboardComponent } from './components/pages/leaderboard/leaderboard.component';
+import { JointodaycomponentComponent } from './components/pages/jointodaycomponent/jointodaycomponent.component';
+import { WhatspopularcomponentComponent } from './components/pages/whatspopularcomponent/whatspopularcomponent.component';
+import { CarousalcomponentComponent } from './components/pages/carousalcomponent/carousalcomponent.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +29,11 @@ import { FormsModule } from '@angular/forms';
     SignupComponent,
     HomeComponent,
     LoginComponent,
-    PopularComponent
+    PopularComponent,
+    LeaderboardComponent,
+    JointodaycomponentComponent,
+    WhatspopularcomponentComponent,
+    CarousalcomponentComponent
   ],
   imports: [
     BrowserModule,

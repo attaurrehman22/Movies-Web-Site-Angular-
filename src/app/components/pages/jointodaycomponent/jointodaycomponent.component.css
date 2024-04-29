@@ -1,0 +1,31 @@
+
+.div-for-join-data {
+    position: relative;
+    width: 100%;
+    height: 260px;
+    background-image: url("../home/1P3QtW1IkivqDrKbbwuR0zCYIf8.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+  .head-of-join {
+    margin-left: 40px;
+    width: 60%;
+  }
+  .join-div {
+    margin-left: 40px;
+    display: flex;
+  }
+  .unorder-list-ofjoin li {
+    font-size: 13px;
+    color: #ffffff;
+  }
+  .unorder-list-ofjoin li + li {
+    margin-top: 0px;
+  }
+  .col-3 {
+    padding: 0px;
+  }
+  .unorder-list-ofjoin li {
+    padding: 0px;
+    border-radius: 5px;
+  }

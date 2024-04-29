@@ -1,0 +1,117 @@
+
+/* --------------------- What's Popular start ------------------ */
+.latest-Popular-div {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background-color: white;
+  }
+  .div-for-Popular-heading {
+    margin-top: 30px;
+    margin-left: 30px;
+    height: 25px;
+    width: 90%;
+  }
+  .div-for-Popular-button {
+    height: 35px;
+    border: 1px solid black;
+    border-radius: 18px;
+    width: 402px;
+  }
+  .div-for-Popular-button button {
+    height: 34px;
+    width: 100px;
+    color: black;
+    font-weight: bold;
+  }
+  .div-for-Popular-data {
+    margin-top: 25px;
+    height: 230px;
+  }
+  .movie-Popular-container {
+    height: 300px;
+    width: 1861px;
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: auto;
+    position: relative;
+    margin-left: 30px;
+  }
+  .movie-Popular-container::-webkit-scrollbar {
+    display: none;
+  }
+  .movie-Popular-item {
+    display: inline-block;
+    padding: 6px;
+    height: 300px;
+    width: 400px;
+    margin-right: 10px;
+    align-items: center;
+    justify-content: center;
+    object-fit: contain;
+    box-sizing: content-box;
+    transition: transform 450ms;
+    border-radius: 25px;
+  }
+  .movie-Popular-image {
+    width: 140px;
+    height: 200px;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    box-sizing: content-box;
+    transition: transform 450ms;
+  }
+  .movie-Popular-details {
+    height: 50px;
+    width: 140px;
+    text-align: left;
+  }
+  .movie-Popular-name {
+    font-weight: bold;
+    color: black;
+    height: 25px;
+    font-size: 15px;
+    margin-top: 18px;
+  }
+  .movie-Popular-date {
+    color: black;
+    font-size: 12px;
+    margin-top: 36px;
+  }
+  .progress1 {
+    width: 50px;
+    height: 50px;
+    background: none;
+    position: absolute;
+    left: 4px;
+    top: 74px;
+  }
+  .progress1::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 6px solid #eee;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .progress1 > span {
+    width: 50%;
+    height: 50%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+  }
+  .progress1 .progress-right {
+    right: 10;
+  }
+  .progress1 .progress-value {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  /* --------------------- What's Popular end ------------------ */
+  
